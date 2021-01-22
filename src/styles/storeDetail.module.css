@@ -1,0 +1,16 @@
+.tbl {
+  width: 100%;
+  padding: 1em;
+}
+
+.tbl > tr > td:last-child {
+  color: red;
+}
+
+.arrow {
+  color: white;
+  background-color: gray;
+  opacity: 0.7;
+  border-radius: 0.8em;
+  padding: 0.3em 0.5em;
+}
