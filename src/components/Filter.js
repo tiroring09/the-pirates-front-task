@@ -40,11 +40,11 @@ function Filter() {
   }
 
   const query = () => {
-    console.log(`${zone.label}/${item.label}/${sort.label}/${kwrd}`);
+    // console.log(`${zone.label}/${item.label}/${sort.label}/${kwrd}`);
 
     let result = storeQuery(zone, item, sort, kwrd);
 
-    console.log(result);
+    // console.log(result);
     setStoreList(result);
   }
 

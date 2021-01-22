@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { bannerData as bData } from '../data/data';
 
+// setInterval 활용위한 wrapper
 function useInterval(callback, delay) {
   const savedCallback = useRef();
 
@@ -25,27 +26,31 @@ const Banner = () => {
   const [viewAll, setViewAll] = useState(false);
 
   useInterval(() => {
+    // 배너의 순번 교체
     let tmp = listBanner.filter((x, i) => i > 0);
     tmp.push(listBanner[0]);
     setListBanner(tmp);
   }, 1000);
 
-  const bannerItems = listBanner.map((b, idx) => {
-    return (
-      <div key={idx} style={stl.bEach} className={idx > 0 && (viewAll ? null : "hide")}>
-        <Link to={b.uri} style={stl.link}>
-          {b.label} <span style={stl.bold}>{b.price}</span> {b.comment}
-        </Link>
-      </div>
-    );
-  });
-
   return (
     <div style={stl.mgn}>
+
       <div style={stl.btn} onClick={()=>viewAll?setViewAll(false):setViewAll(true)}>
         {viewAll?"▲":"▼"}
       </div>
-      {bannerItems}
+
+      {/* 각 배너들 렌더링 */}
+      {listBanner.map((b, idx) => {
+        return (
+          <div key={idx} style={stl.bEach}
+            className={(idx > 0 && !viewAll) ? "hide" : undefined}
+          >
+            <Link to={b.uri} style={stl.link}>
+              {b.label} <span style={stl.bold}>{b.price}</span> {b.comment}
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -72,4 +77,5 @@ const stl = {
     padding: '0 0.5em',
   }
 };
+
 export default Banner;
