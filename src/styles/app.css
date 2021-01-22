@@ -1,0 +1,7 @@
+.topContainer {
+  max-width: 420px;
+  min-width: 360px;
+  margin: auto;
+  min-height: 100vh;
+  background-color: white;
+}

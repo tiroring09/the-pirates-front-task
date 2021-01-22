@@ -1,0 +1,10 @@
+#navbar > li {
+  text-align: center;
+  padding: 0.5em;
+  font-size: 14px;
+  list-style: none;
+}
+
+.hide {
+  display: none;
+}
