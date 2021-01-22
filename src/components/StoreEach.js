@@ -32,7 +32,7 @@ const StoreEach = (props) => {
       </div>
 
       <div style={st.tagWrap}>
-        {s.tags.map(x => <span style={st.tag}>{x}</span>)}
+        {s.tags.map((x, i) => <span key={i} style={st.tag}>{x}</span>)}
       </div>
     </div>
   );

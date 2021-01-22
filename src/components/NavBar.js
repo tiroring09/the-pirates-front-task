@@ -8,7 +8,7 @@ const NavBar = () => {
       </div>
     </div>
 
-    <ul id="navbar" className="list-group list-group-horizontal w100 justify-content-between">
+    <ul id="navbar" className="list-group list-group-horizontal justify-content-between">
       <li className="flex-fill" style={st.menu}>홈</li>
       <li className="flex-fill" style={st.menu}>시장</li>
       <li className="flex-fill" style={st.menu}>쇼핑</li>
@@ -37,6 +37,5 @@ const st = {
     border: '1px solid #f1f1f1',
   },
 }
-
 
 export default NavBar;
